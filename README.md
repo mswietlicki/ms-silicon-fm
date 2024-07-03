@@ -5,17 +5,19 @@ Design for SA828 based waterproof FM radio for water sports
 ## Blog
 
 1. [2024-06-24 Idea](./blog/20240624-Idea.md)
+2. [2024-07-02 UART SA828 programming via RP2040](./blog/20249702-UART.md)
+3. [2024-07-03 SA828 volume control](./blog/20249703-Volume.md)
 
 ## Tasks
 
 1. Repo (Done)
 2. Pick PCB design tool -> EasyEDA
 3. Test SA828-U (Done)
-4. Buy parts (done)
+4. Buy parts (done?)
 5. Test board with RP2040
-6. Code UART comm RP2040 -> SA828
-7. Test PMR RX and TX
-8. Build and test PWR RC low filter for SA828 volume control
+6. Code UART comm RP2040 -> SA828 (done)
+7. Test PMR RX and TX (done)
+8. Build and test SA828 volume control (done)
 9. Test 1284 channel control by RP2040
 10. Test H/L TX power
 11. SPKEN led indicator
