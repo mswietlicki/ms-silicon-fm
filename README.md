@@ -1,6 +1,6 @@
 # ms-silicon-fm
-Design for SA828 based waterproof FM radio for water sports
 
+SA828 based waterproof FM radio for water sports
 
 ## Blog
 
@@ -41,3 +41,7 @@ Design for SA828 based waterproof FM radio for water sports
 26. Test
 27. Test in salt water
 28. Test in real water
+
+## Author
+
+Mateusz Świetlicki
