@@ -43,6 +43,11 @@ SA828 based waterproof FM radio for water sports
 27. Test in salt water
 28. Test in real water
 
+## Links
+
+- [RP2040](https://www.waveshare.com/wiki/RP2040-Zero)
+- [SA828](https://www.nicerf.com/walkie-talkie-module/walkie-talkie-module-sa828.html)
+
 ## Author
 
-Mateusz Świetlicki
+Mateusz Świetlicki and friends
