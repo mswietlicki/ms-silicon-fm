@@ -5,9 +5,24 @@ class SA828:
     channels = []
     tx_subaudio = "000"
     rx_subaudio = "000"
-    sq = "1"
+    sq = "2"
+
+    # Control pins
+    pwr_pin: Pin
+    vox_pin: Pin
+    spk_pin: Pin
+    spk_en_pin: Pin
+    channel_pins: list[Pin]
     
-    def __init__(self, uart_id=0, baudrate=9600, tx_pin=0, rx_pin=1):
+    def __init__(self, uart_id=0, baudrate=9600, tx_pin=0, rx_pin=1, pwr_pin=8, channel_pins=[4, 5, 6, 7], vox_pin=3, spk_pin=26, spk_en_pin=27):
+        print("Initializing SA828")
+        
+        self.pwr_pin = Pin(pwr_pin, Pin.OPEN_DRAIN, None, value=0)
+        self.vox_pin = Pin(vox_pin, Pin.OPEN_DRAIN, None, value=1)
+        self.spk_pin = Pin(spk_pin, Pin.OPEN_DRAIN, None, value=1)
+        self.spk_en_pin = Pin(spk_en_pin, Pin.IN, Pin.PULL_DOWN)
+        self.channel_pins = [Pin(pin, Pin.IN, None, value=1) for pin in channel_pins]
+
         self.uart = UART(uart_id, baudrate=baudrate, bits=8, parity=None, stop=1, tx=Pin(tx_pin), rx=Pin(rx_pin))
         time.sleep(0.1)  # Allow some time for the UART to initialize
         print("FM:", self.read_module())
@@ -65,3 +80,36 @@ class SA828:
         
     def set_channels(self, channels):
         self.channels = channels
+
+    def set_squelch(self, sq):
+        self.sq = sq
+
+    def set_subaudio(self, filter):
+        self.tx_subaudio = filter
+        self.rx_subaudio = filter
+
+    def set_vox(self, enable):
+        self.vox_pin.value(enable)
+    
+    def set_power(self, power):
+        self.pwr_pin.value(power)
+
+    def lock_speaker(self):
+        self.spk_en_pin.init(mode=Pin.OUT, value=1)
+        self.spk_pin.init(Pin.ALT, alt = Pin.ALT_PWM)
+        return self.spk_pin
+    
+    def unlock_speaker(self):
+        self.spk_en_pin.init(Pin.IN, Pin.PULL_DOWN)
+        self.spk_pin.init(Pin.OPEN_DRAIN, value=1)
+
+    # there are 16 channels, that are program as binary code into the SA828 pins
+    def select_channel(self, channel: int):
+        for i, pin in enumerate(self.channel_pins):
+            value = (channel >> i) & 1
+            print("SET:", i, value)
+            if value:
+                pin.init(Pin.OUT, value=0)
+            else:
+                pin.init(Pin.IN, Pin.PULL_UP)
+        print("Channel pins values:", [(pin) for pin in self.channel_pins])
