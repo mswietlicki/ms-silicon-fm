@@ -8,6 +8,7 @@ SA828 based waterproof FM radio for water sports
 2. [2024-07-02 UART SA828 programming via RP2040](./blog/20249702-UART.md)
 3. [2024-07-03 SA828 volume control](./blog/20249703-Volume.md)
 4. [2024-07-04 Play simple sounds](./blog/20249704-Beeps.md)
+5. [2024-07-29 Decoding DTMF](./blog/20240729-DTMF.md)
 
 ## Tasks
 
