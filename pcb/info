@@ -1,0 +1,404 @@
+{
+  "uuid": "ed02fbe3829562bfcbb9628453288217",
+  "path": "Offline/SilikonFM",
+  "name": "SilikonFM",
+  "content": "",
+  "created_at": "2024-08-15 00:38:33",
+  "updated_at": "2024-08-15 23:44:34",
+  "stick": "",
+  "documents": [
+    {
+      "uuid": "c06de720b44be869176e8e993e95bdd5",
+      "title": "Sheet_SilikonFM",
+      "description": "",
+      "docType": "1",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "components": {
+        "def8cf873052469d8e4a31192eb8474e": 1,
+        "14e38f097d3b4786b1ad1f7e48a74442": 1,
+        "f403b85989cd44d3b99ab547873034fb": 1,
+        "a1129be52f594c03ac4de61892d551f8": 1,
+        "011f4062dccc4e72946e4fead06b2687": 1,
+        "68b3cbc04fcb4968880fcd2753f2fbb0": 1,
+        "766ad13fadfb4ee5b9d420217fac1dcd": 3,
+        "9a3ab10ae3d24364adb83b23f9cf37a1": 1,
+        "24eeb2ceca08480b92b847b6a310acda": 4,
+        "b0248eb51e084227889f2cb84eab79c4": 1,
+        "f426025f26228162dab8da65d9abf4e1": 1,
+        "d3c4172fcbe0408bae13aaf30819b29f": 1,
+        "bb009484ef804a24ac5d18c54b249586": 4,
+        "f5fb5a24e9edc515352eb800d4f925df": 1,
+        "5cbe824183374fac8e4c1ae848199ce3": 1,
+        "cf6eca9c9efe444882712b3d5cec1885": 1,
+        "f29621326ae148e3809e5921ba1d3d3c": 1,
+        "5c1036b53a4146e4841df4ed0a9de8f0": 1,
+        "a68dc5e6a9944c46b7604648a43dcd65": 3,
+        "f5b1d9403e49471cab43bc5a1bec336f": 1,
+        "7685875a5fe346c1910c0ff9a44b9bea": 1
+      },
+      "BOM": [
+        [
+          "Value",
+          "Quantity",
+          "Package",
+          "Components",
+          "CustomPara"
+        ],
+        [
+          "LiPo3V7",
+          1,
+          "HDR-M-2.54_1X2",
+          "B1",
+          {
+            "Manufacturer Part": "BS-2-1",
+            "Manufacturer": "Q&J",
+            "Supplier": "LCSC",
+            "Supplier Part": "C70376"
+          }
+        ],
+        [
+          "220nF",
+          3,
+          "C0603",
+          "C1,C2,C3",
+          {
+            "Manufacturer Part": "0805B224K101CT",
+            "Manufacturer": "Walsin(华新科)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C384763"
+          }
+        ],
+        [
+          "220mF",
+          1,
+          "C0805",
+          "C4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "100nF",
+          1,
+          "C0603",
+          "C5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1u",
+          1,
+          "C0603",
+          "C6",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "4u7",
+          1,
+          "C0603",
+          "C7",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "SS32",
+          1,
+          "SMA_L4.3-W2.6-LS5.0-RD",
+          "D1",
+          {
+            "Manufacturer Part": "SS32",
+            "Manufacturer": "宏迦橙",
+            "Supplier": "LCSC",
+            "Supplier Part": "C18199173"
+          }
+        ],
+        [
+          "HDR_1x3",
+          3,
+          "HDR-M-2.54_1X3",
+          "J1,J2,J3",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C180248"
+          }
+        ],
+        [
+          "HDR-1x4",
+          1,
+          "HDR-M-2.00-1X4",
+          "J4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C124378"
+          }
+        ],
+        [
+          "LED-0603_R",
+          1,
+          "LED0603_RED",
+          "LED1",
+          {
+            "Manufacturer Part": "19-217/R6C-AL1M2VY/3T",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72044"
+          }
+        ],
+        [
+          "LED-0603_G",
+          1,
+          "LED0603_GREEN",
+          "LED2",
+          {
+            "Manufacturer Part": "19-217/GHC-YR1S2/3T",
+            "Manufacturer": "EVERLIGHT(台湾亿光)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C72043"
+          }
+        ],
+        [
+          "Microphone",
+          1,
+          "HDR-M-2.54_1X2",
+          "MK1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "MOSFET-P",
+          1,
+          "SOT-23-3 (DMP1045U-7)_L2.9-W1.3-P1.90-LS2.4-BR",
+          "Q1",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "500Ω",
+          1,
+          "R0603",
+          "R1",
+          {
+            "Manufacturer Part": "ARG05FTC5000",
+            "Manufacturer": "Viking(光颉)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C2828857"
+          }
+        ],
+        [
+          "200Ω",
+          1,
+          "R0603",
+          "R2",
+          {
+            "Manufacturer Part": "CR-05JL7--200R",
+            "Manufacturer": "Viking(光颉)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C280017"
+          }
+        ],
+        [
+          "50Ω",
+          1,
+          "R0603",
+          "R3",
+          {
+            "Manufacturer Part": "TD05G50R0BT",
+            "Manufacturer": "FH(风华)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5355206"
+          }
+        ],
+        [
+          "10k",
+          1,
+          "R0603",
+          "R4",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "100k",
+          1,
+          "R0603",
+          "R5",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1k2",
+          1,
+          "R0603",
+          "R6",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "1k",
+          2,
+          "R0603",
+          "R7,R8",
+          {
+            "Manufacturer Part": "",
+            "Manufacturer": "",
+            "Supplier": "",
+            "Supplier Part": ""
+          }
+        ],
+        [
+          "8Ohm 2W",
+          1,
+          "HDR-M-2.54_1X2",
+          "SPK1",
+          {
+            "Manufacturer Part": "GSPK2307P-8R1W",
+            "Manufacturer": "INGHAi(赢海)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C530531"
+          }
+        ],
+        [
+          "HDR",
+          1,
+          "PB-12A-2",
+          "SW1",
+          {
+            "Manufacturer Part": "K2-1107ST-A4SW-06",
+            "Manufacturer": "",
+            "Supplier": "LCSC",
+            "Supplier Part": "C118141"
+          }
+        ],
+        [
+          "RP2040-ZERO",
+          1,
+          "COMM-TH_RP2040-ZERO",
+          "U1",
+          {
+            "Manufacturer Part": "RP2040-Zero",
+            "Manufacturer": "Waveshare(微雪电子)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C5350143"
+          }
+        ],
+        [
+          "SA828-U",
+          1,
+          "WIRELM-TH_G-NICERF_SA828-X_NOHOLES",
+          "U2",
+          {
+            "Manufacturer Part": "SA828-U",
+            "Manufacturer": "G-NiceRF(思为无线)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C3001505"
+          }
+        ],
+        [
+          "TP4056",
+          1,
+          "ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP",
+          "U3",
+          {
+            "Manufacturer Part": "TP4056-42-ESOP8",
+            "Manufacturer": "TOPPOWER(南京拓微)",
+            "Supplier": "LCSC",
+            "Supplier Part": "C16581"
+          }
+        ],
+        [
+          "USB-Magnetic",
+          1,
+          "HDR-M-2.54_1X4",
+          "USB1",
+          {
+            "Manufacturer Part": "-",
+            "Manufacturer": "ValuePro",
+            "Supplier": "LCSC",
+            "Supplier Part": "C42605"
+          }
+        ]
+      ],
+      "updateTime": 1723753782,
+      "createTime": 1723675113,
+      "histories": [],
+      "created_at": "2024-08-15 00:38:33",
+      "updated_at": "2024-08-15 22:29:42"
+    },
+    {
+      "uuid": "34aabfc5772b777cef2d300d8ded0d25",
+      "title": "PCB_SilikonFM",
+      "filename": "PCB_SilikonFM.json",
+      "description": "",
+      "docType": "3",
+      "master": "",
+      "thumb": "/images/thumb-default.png",
+      "updateTime": 1723758274,
+      "createTime": 1723674714,
+      "histories": [],
+      "created_at": "2024-08-15 00:31:54",
+      "updated_at": "2024-08-15 23:44:34",
+      "components": {
+        "c60688fa8e434b729e7da7bce41cc64f": 1,
+        "0ac2c9df0015486f9df7eb17b451fef6": 1,
+        "b18492e74e2c43adad6336500a8632dd": 1,
+        "398691f1f785460098bbe5ee6590333c": 8,
+        "7568fee05bc44581b2c32625ae15b3f8": 1,
+        "f8151fdc728a41ebbc304e11d39e5437": 6,
+        "70aa5812f21f4991bf427395d51849f4": 3,
+        "c0ea85086e3e4eb298ca0c7d24ac8c18": 1,
+        "74e73276ef2e463d8ec272e273ceccfc": 1,
+        "2ee8eb13a0124a108e622ce40c0c25a8": 1,
+        "9f77654394344f25b3de138e0fe05ff6": 3,
+        "1efb3a885b5b4aecb6d41221a8f4d86b": 1,
+        "7b706fa666744f94a830dffb572df5db": 1,
+        "282f7786cb6144d097ae00194c3e3fb3": 1,
+        "1f222b64ec664c538e5a750949e42213": 1
+      }
+    }
+  ],
+  "sort": [],
+  "title": "SilikonFM",
+  "foldername": "SilikonFM",
+  "schfilename": "SilikonFM.json",
+  "schfilemtime": 1723753782377
+}
