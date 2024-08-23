@@ -1,4 +1,4 @@
-from machine import UART, Pin
+from machine import UART, Pin, PWM
 import utime
 
 class SA828:
@@ -8,16 +8,20 @@ class SA828:
     sq: str = "2"
 
     # Control pins
+    ptt_pin: Pin
     pwr_pin: Pin
+    sleep_pin: Pin
     vox_pin: Pin
     spk_pin: Pin
     spk_en_pin: Pin
     channel_pins: list[Pin]
     
-    def __init__(self, uart_id=0, baudrate=9600, tx_pin=0, rx_pin=1, pwr_pin=8, channel_pins=[4, 5, 6, 7], vox_pin=3, spk_pin=26, spk_en_pin=27):
+    def __init__(self, uart_id=0, baudrate=9600, tx_pin=12, rx_pin=13, ptt_pin=11, pwr_pin=9, channel_pins=[5, 6, 7, 8], vox_pin=4, spk_pin=26, spk_en_pin=10, sleep_pin=29):
         print("Initializing SA828")
-        
+
+        self.ptt_pin = Pin(ptt_pin, Pin.OPEN_DRAIN, None, value=1)
         self.pwr_pin = Pin(pwr_pin, Pin.OPEN_DRAIN, None, value=0)
+        self.sleep_pin = Pin(sleep_pin, Pin.OPEN_DRAIN, None, value=1)
         self.vox_pin = Pin(vox_pin, Pin.OPEN_DRAIN, None, value=1)
         self.spk_pin = Pin(spk_pin, Pin.OPEN_DRAIN, None, value=1)
         self.spk_en_pin = Pin(spk_en_pin, Pin.IN, Pin.PULL_DOWN)
@@ -97,9 +101,9 @@ class SA828:
     def lock_speaker(self):
         self.spk_en_pin.init(mode=Pin.OUT, value=1)
         self.spk_pin.init(Pin.ALT, alt = Pin.ALT_PWM)
-        return self.spk_pin
+        return PWM(self.spk_pin)
     
-    def unlock_speaker(self):
+    def free_speaker(self):
         self.spk_en_pin.init(Pin.IN, Pin.PULL_DOWN)
         self.spk_pin.init(Pin.OPEN_DRAIN, value=1)
 

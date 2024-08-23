@@ -20,18 +20,18 @@ SA828 based waterproof FM radio for water sports
 6. Code UART comm RP2040 -> SA828 (done)
 7. Test PMR RX and TX (done)
 8. Build and test SA828 volume control (done)
-9. Test 1284 channel control by RP2040
-10. Test H/L TX power
+9. Test 1284 channel control by RP2040 (done)
+10. Test H/L TX power (done)
 11. SPKEN led indicator
-12. Test speaker in silicon. Can it be submerged? Can it be 1 side attached to silicon? Is air chamber required.
-13. Test microphone in silicon
-14. Test buttons in silicon
+12. Test speaker in silicon. Can it be submerged? Can it be 1 side attached to silicon? Is air chamber required. (done)
+13. Test microphone in silicon (done)
+14. Test buttons in silicon (done)
     1.  push button
     2.  membrane button
     3.  magnetic button
 15. Design and test battery charging circuit
-16. Test magnetic USB connection 
-17. Design PCB
+16. Test magnetic USB connection (done)
+17. Design PCB (done)
 18. Request PCB
 19. Test RX power consumption
 20. Pick and test battery

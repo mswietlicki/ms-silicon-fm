@@ -1,8 +1,9 @@
 from machine import Pin, PWM
-from utime import sleep_ms, ticks_ms
+from utime import sleep_ms, ticks_ms, ticks_diff, sleep_us
 import ujson
 from config import Config
 from sa828 import SA828
+from button import Button
 
 try:
     with open(Config.DEFAULT_PATH, "r") as f:
@@ -35,43 +36,47 @@ print("SAVE:", sa828.write_parameters())
 pin14 = Pin(14, Pin.OPEN_DRAIN, None, value=1)
 pin15 = Pin(15, Pin.OPEN_DRAIN, None, value=1)
 
-def button1_pressed(change):
-    button1.irq(handler=None)
-    print("Button 1 pressed")
-
-    config.channel = (config.channel - 1) % 16
-    print("Channel", config.channel)
-    sa828.select_channel(config.channel)
-    with open(Config.DEFAULT_PATH, "w") as f:
-        f.write(ujson.dumps(config.__dict__))
-    
-    sleep_ms(20)
-    button1.irq(trigger=Pin.IRQ_FALLING, handler=button1_pressed)
-
-def button2_pressed(change):
-    print("Button 2 pressed")
-    config.channel = (config.channel + 1) % 16
-    print("Channel", config.channel)
+def increment_channel(amount):
+    config.channel = (config.channel + amount) % 16
+    print("Channel", config.channel + 1)
     sa828.select_channel(config.channel)
     with open(Config.DEFAULT_PATH, "w") as f:
         f.write(ujson.dumps(config.__dict__))
 
-button1 = Pin(28, Pin.IN, Pin.PULL_UP)
-button1.irq(trigger=Pin.IRQ_FALLING, handler=button1_pressed)
-button2 = Pin(29, Pin.IN, Pin.PULL_UP)
-button2.irq(trigger=Pin.IRQ_FALLING, handler=button2_pressed)
-# Test the speaker
-print("PLAY:")
-speaker_pin = sa828.lock_speaker()
-speakerPWN = PWM(speaker_pin)
-speakerPWN.init(duty_u16=1000, duty_ns=15252, freq=1000)
+def play_current_channel():
+    pwm = sa828.lock_speaker()
+    pwm.freq(48000)
 
-sleep_ms(500)
+    f = open(f"numbers/{config.channel+1}.raw","rb")
+    buf = bytearray(4096)
+    while True:
+        read_length = f.readinto(buf)
+        print(read_length)
+        for sample in buf[:read_length]:
+            pwm.duty_u16(sample<<8)
+            sleep_us(110)
+        if read_length < 4096:
+            break
+    f.close()
 
-print("STOP:")
-speakerPWN.deinit()
-sa828.unlock_speaker()
+    pwm.deinit()
+    sa828.free_speaker()
 
-# loop forever  
+def on_btn_up_long_click(button):
+    increment_channel(1)
+    play_current_channel()
+
+def on_btn_down_long_click(button):
+    increment_channel(-1)
+    play_current_channel()
+
+# Initialize the buttons
+button1 = Button(1)
+button1.on_long_click(on_btn_up_long_click)
+button2 = Button(2)
+button2.on_long_click(on_btn_down_long_click)
+
+play_current_channel()
+
 while True:
     sleep_ms(100)
