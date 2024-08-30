@@ -14,6 +14,7 @@
         "~/.micropico-stubs/included"
     ],
     "cSpell.words": [
+        "neopixel",
         "subaudio",
         "UART",
         "ujson"
