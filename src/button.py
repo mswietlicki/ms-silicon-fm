@@ -37,7 +37,8 @@ class Button():
         self._down_time = time.ticks_ms()
         print("BTN DOWN", self.pin_number)
         if self._on_down_handler is not None:
-            micropython.schedule(self._on_down_handler,self)
+            self._on_down_handler(self)
+            #micropython.schedule(self._on_down_handler,self)
         
         pin.irq(handler=self._button_up, trigger=Pin.IRQ_RISING)
         
@@ -48,16 +49,19 @@ class Button():
         self.value = pin.value()
         print("BTN UP", self.pin_number)
         if self._on_up_handler is not None:
-            micropython.schedule(self._on_up_handler,self)
+            self._on_up_handler(self)
+            #micropython.schedule(self._on_up_handler,self)
 
         if time.ticks_diff(time.ticks_ms(), self._down_time) > self.long_click_duration_ms:
             print("BTN LONG CLICK", self.pin_number)
             if self._on_long_click_handler is not None:
-                micropython.schedule(self._on_long_click_handler,self)
+                self._on_long_click_handler(self)
+                #micropython.schedule(self._on_long_click_handler,self)
         else:
             print("BTN SHORT CLICK", self.pin_number)
             if self._on_short_click_handler is not None:
-                micropython.schedule(self._on_short_click_handler,self)
+                self._on_short_click_handler(self)
+                #micropython.schedule(self._on_short_click_handler,self)
 
         pin.irq(handler=self._button_down, trigger=Pin.IRQ_FALLING)
 

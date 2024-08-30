@@ -16,7 +16,7 @@ class SA828:
     spk_en_pin: Pin
     channel_pins: list[Pin]
     
-    def __init__(self, uart_id=0, baudrate=9600, tx_pin=12, rx_pin=13, ptt_pin=11, pwr_pin=9, channel_pins=[5, 6, 7, 8], vox_pin=4, spk_pin=26, spk_en_pin=10, sleep_pin=29):
+    def __init__(self, uart_id=0, baudrate=9600, tx_pin=12, rx_pin=13, ptt_pin=11, pwr_pin=9, channel_pins=[5, 6, 8, 7], vox_pin=4, spk_pin=26, spk_en_pin=10, sleep_pin=29):
         print("Initializing SA828")
 
         self.ptt_pin = Pin(ptt_pin, Pin.OPEN_DRAIN, None, value=1)
@@ -81,7 +81,13 @@ class SA828:
     def set_channel(self, i, tx, rx):
         self.channels[i*2] = tx
         self.channels[i*2+1] = rx
-        
+
+    def talk_on(self):
+        self.ptt_pin.value(0)
+
+    def talk_off(self):
+        self.ptt_pin.value(1)
+
     def set_channels(self, channels):
         self.channels = channels
 
