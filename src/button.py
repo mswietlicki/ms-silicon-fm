@@ -18,15 +18,19 @@ class Button():
 
     def on_down(self, handler):
         self._on_down_handler = handler
+        return self
     
     def on_up(self, handler):
         self._on_up_handler = handler
+        return self
 
     def on_short_click(self, handler):
         self._on_short_click_handler = handler
+        return self
 
     def on_long_click(self, handler):
         self._on_long_click_handler = handler
+        return self
 
 
     def _button_down(self, pin):

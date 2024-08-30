@@ -38,10 +38,10 @@ class SA828:
             self.rx_subaudio = parameters[33]
             self.sq = parameters[34]
             
-            print("Channels:", self.channels)
-            print("TX_SUBAUDIO:", self.tx_subaudio)
-            print("RX_SUBAUDIO:", self.rx_subaudio)
-            print("SQ:", self.sq)
+            # print("Channels:", self.channels)
+            # print("TX_SUBAUDIO:", self.tx_subaudio)
+            # print("RX_SUBAUDIO:", self.rx_subaudio)
+            # print("SQ:", self.sq)
         
     def send_command(self, command):
         self.uart.write(command)
